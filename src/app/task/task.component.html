@@ -1,0 +1,26 @@
+<div class="mydiv">
+<!-- ...  -->
+<div class="dropdown divone" id="right">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select product
+    </button>
+    <div class="dropdown-menu" aria-labelledby="program-dropdown">
+    <label for="prog-check" *ngFor="let a of  projectData" >
+        <input type="checkbox" name="prog-check" [value]="a.programName.na" (change)="productSelect(a.programName)">{{ a.programName}}
+    </label>
+    </div>
+</div>
+<!-- lkjsdfjkf  -->
+
+<div class="dropdown divone" >
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select project
+    </button>
+    <div class="dropdown-menu" aria-labelledby="program-dropdown">
+    <label for="prog-check" *ngFor="let a of programData.virtualProgramDetails" >
+        <input type="checkbox" name="prog-check"[value]="a.projectName" >{{ a.projectName}}
+    </label>
+    </div>
+</div>
+
+</div>
