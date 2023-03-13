@@ -14,7 +14,7 @@ export class TaskComponent {
   constructor(private myservice:MyservService){
 
   }
-   d: any = [];
+   projectList: any = [];
   ngOnInit(){
  
    this.myservice.getprogram().subscribe(res=>{
@@ -29,9 +29,26 @@ export class TaskComponent {
   
   }
   storeProductName:any=[];
-  productSelect(data:any){
-    this.storeProductName.push(data);
-    console.log(this.storeProductName);
-  } 
+//   productSelect(data:any){
+//     this.storeProductName.push(data);
+//     console.log(this.storeProductName);
+//   } 
+  
+  
+  showList(val: string) {
+    for (var i = 0; i < 17; i++) {
+      var c = 0;
+      if (val == this.projectData.virtualProgramDetails[i].programID) {
+        for (var j = 0; j < this.projectList.length; j++) {
+          if (this.projectList[j] == this.projectData.virtualProgramDetails[i].projectName) {
+            c++;
+          }
+        }
+        if (!c)
+          this.projectList.push(this.projectData.virtualProgramDetails[i].projectName);
+      }
+    }
+  }
+
   
 }
